@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import project.entity.Equipment;
 import project.entity.User;
 import project.service.UserService;
 import project.service.UserServiceImpl;
@@ -19,11 +20,12 @@ import java.util.List;
 import org.apache.tomcat.util.collections.CaseInsensitiveKeyMap;
 import org.mindrot.jbcrypt.BCrypt;
 
-@WebServlet({ "/1.mini/user/list", "/1.mini/user/register", "/1.mini/user/update", 
-	"/1.mini/user/delete", "/1.mini/user/login","/1.mini/user/logout" })
+@WebServlet({ "/1.mini/equip/list", "/1.mini/equip/register", "/1.mini/equip/update", 
+	"/1.mini/user/delete" })
 
-public class UserController extends HttpServlet {
+public class EquipmentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	// 수정할 것
 	private UserService uSvc = new UserServiceImpl();
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -55,10 +57,11 @@ public class UserController extends HttpServlet {
 			String page_ = request.getParameter("page");
 			int page = (page_ == null || page_.equals("")) ? 1 : Integer.parseInt(page_); // 입력값 받기
 			session.setAttribute("currentUserPage", page);
-			List<User> userList = uSvc.getUserList(page);
+			// 수정할 것
+			List<Equipment> userList = uSvc.getUserList(page);
 
 			// 모델에서 가져오기: "list"에 list 값 세팅
-			request.setAttribute("userList", userList);
+			request.setAttribute("equiplist", userList);
 
 			// for paginantion
 			int totalUsers = uSvc.getUserCount();

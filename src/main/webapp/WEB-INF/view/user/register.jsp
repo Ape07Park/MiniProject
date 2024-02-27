@@ -10,6 +10,7 @@
 <body class="bg-light">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
+    	<%--타러와 로고 --%>
       <img src="/jw/img/ck-logo.png" height="60">
       <div class="p-2 bg-dard justify-content-center">
         <img src="https://picsum.photos/1500/180" width="100%">
@@ -25,7 +26,7 @@
           <div class="card-body">
             <div class="card-title"><h3><strong>회원가입</strong></h3></div>
             <hr>
-            <form action="/jw/bbs/user/register" method="post">
+            <form action="/mp/1.mini/user/register" method="post">
               <table class="table table-borderless">
                 <tr>
                   <td style="width: 45%;"><label class="col-form-label">사용자 ID</label></td>
@@ -43,6 +44,10 @@
                   <td><label class="col-form-label">사용자 이름</label></td>
                   <td><input type="text" name="uname" class="form-control"></td>
                 </tr>
+                 <tr>
+                  <td><label class="col-form-label">닉네임</label></td>
+                  <td><input type="text" name="nickName" class="form-control"></td>
+                </tr>
                 <tr>
                   <td><label class="col-form-label">이메일</label></td>
                   <td><input type="text" name="email" class="form-control"></td>
@@ -57,7 +62,7 @@
             </form>
             <p class="mt-3">
               <span class="me-3">이미 사용자 계정이 있으신가요?</span>
-              <a href="/jw/bbs/user/login">로그인</a>
+              <a href="/mp/1.mini/user/login">로그인</a>
             </p>
             <div class="mt-3 mb-3">
               <span class="me-3">소셜 계정으로 가입</span>

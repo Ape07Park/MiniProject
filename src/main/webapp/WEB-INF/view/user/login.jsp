@@ -9,15 +9,7 @@
 	</style>
 </head>
 <body class="bg-light">
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container-fluid">
-      <img src="/jw/img/ck-logo.png" height="60">
-      <div class="p-2 bg-dard justify-content-center">
-        <img src="https://picsum.photos/1500/180" width="100%">
-      </div>
-    </div>
-  </nav>
-  
+<%@ include file="../common/_top.jspf"%>
   <div class="container" style="margin-top: 270px;">
     <div class="row">
       <div class="col-4"></div>
@@ -26,7 +18,7 @@
           <div class="card-body">
             <div class="card-title"><h3><strong>로그인</strong></h3></div>
             <hr>
-            <form action="/jw/bbs/user/login" method="post">
+            <form action="/mp/1.mini/user/login" method="post">
               <table class="table table-borderless">
                 <tr>
                   <td style="width: 45%;"><label class="col-form-label">사용자 ID</label></td>
@@ -46,9 +38,11 @@
             </form>
             <p class="mt-3">
               <span class="me-3">사용자 계정이 없으신가요?</span>
-              <a href="/jw/bbs/user/register">사용자 가입</a>
+              <a href="/mp/1.mini/user/register">사용자 가입</a>
             </p>
             <div class="mt-3 mb-3">
+            
+            	<%-- 소셜 계정 로그인  --%>
               <span class="me-3">소셜 계정으로 로그인</span>
               <span>
                 <a class="ms-2" href="#"><img src="/jw/img/google-logo.png" height="32"></a>

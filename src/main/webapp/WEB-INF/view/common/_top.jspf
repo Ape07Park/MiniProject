@@ -6,9 +6,10 @@
 		<ul class="navbar-nav">
 			<a class="navbar-brand mx-5" href="#"><img
 				src="/jw/img/ck-logo.png" height="36"></a>
-			<li class="nav-item ms-3"><a class="nav-link" href="/jw/bbs/board/list?p=1"><i
+					
+			<li class="nav-item ms-3"><a class="nav-link" href="/mp/1.mini/board/list?p=1"><i
 					class="far fa-list-alt"></i> 게시판</a></li>
-			<li class="nav-item ms-3"><a class="nav-link" href="/jw/bbs/user/list?page=1"><i
+			<li class="nav-item ms-3"><a class="nav-link" href="/mp/1.mini/user/list?page=1"><i
 					class="fas fa-user-friends"></i> 사용자</a></li>
 			<li class="nav-item dropdown ms-3"><a
 				class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
@@ -24,12 +25,12 @@
 
 			<li class="nav-item ms-3">
 				<c:if test="${empty sessUid}">
-					<a class="nav-link" href="/jw/bbs/user/login"><i
+					<a class="nav-link" href="/mp/1.mini/user/login"><i
 						class="fas fa-sign-in-alt"></i>로그인</a>
 				</c:if> 
 				
 				<c:if test="${not empty sessUid}">
-					<a class="nav-link" href="/jw/bbs/user/logout"><i
+					<a class="nav-link" href="/mp/1.mini/user/logout"><i
 						class="fas fa-sign-out-alt"></i> 로그아웃</a>
 				</c:if></li>
 		</ul>
