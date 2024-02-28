@@ -1,6 +1,6 @@
 package project.controller;
 
-import jakarta.servlet.RequestDispatcher;   
+import jakarta.servlet.RequestDispatcher;    
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,11 +16,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.tomcat.util.collections.CaseInsensitiveKeyMap;
-import org.mindrot.jbcrypt.BCrypt;
 
-@WebServlet({ "/1.mini/user/list", "/1.mini/user/register", "/1.mini/user/update", 
-	"/1.mini/user/delete", "/1.mini/user/login","/1.mini/user/logout" })
+
+@WebServlet({ "/mini/user/list", "/mini/user/register", "/mini/user/update", 
+	"/mini/user/delete", "/mini/user/login","/mini/user/logout" })
 
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -104,15 +103,15 @@ public class UserController extends HttpServlet {
 
 					msg = user.getUname() + "님 환영합니다";
 					// list 화면으로 감
-					url = "/mp/1.mini/board/listAuction";
+					url = "/mp/mini/board/listAuction";
 
 					// 이거 작동 x
 				} else if (result == uSvc.WRONG_PASSWORD) {
 					msg = "패스워드가 틀립니다";
-					url = "/mp/1.mini/user/login";
+					url = "/mp/mini/user/login";
 				} else {
 					msg = "아이디가 틀립니다";
-					url = "/mp/1.mini/user/login";
+					url = "/mp/mini/user/login";
 				}
 				rd = request.getRequestDispatcher("/WEB-INF/view/common/alertMsg.jsp");
 				request.setAttribute("msg", msg);
@@ -127,7 +126,7 @@ public class UserController extends HttpServlet {
 		case "logout":
 			// * session 지우면 로그아웃 됨
 			session.invalidate(); // 세션 지우기
-			response.sendRedirect("/mp/1.mini/user/login");
+			response.sendRedirect("/mp/mini/user/login");
 			break;
 
 
@@ -153,18 +152,18 @@ public class UserController extends HttpServlet {
 				if (uSvc.getUserByUid(uid) != null) {
 					rd = request.getRequestDispatcher("/WEB-INF/view/common/alertMsg.jsp");
 					request.setAttribute("msg", "id 중복됨");
-					request.setAttribute("url", "/mp/1.mini/user/register");
+					request.setAttribute("url", "/mp/mini/user/register");
 					rd.forward(request, response);
 
 					// id, pwd 모두 잘 입력한 경우
 				} else if (pwd.equals(pwd2)) {
 					user = new User(uid, pwd, uname, nickName, email);
 					uSvc.registerUser(user);
-					response.sendRedirect("/mp/1.mini/user/list?page=1");
+					response.sendRedirect("/mp/mini/user/list?page=1");
 				} else { // pwd 틀린 경우
 					rd = request.getRequestDispatcher("/WEB-INF/view/common/alertMsg.jsp");
 					request.setAttribute("msg", "패스워드가 틀립니다");
-					request.setAttribute("url", "/mp/1.mini/user/register");
+					request.setAttribute("url", "/mp/mini/user/register");
 					rd.forward(request, response);
 				}
 			}
@@ -191,22 +190,17 @@ public class UserController extends HttpServlet {
 				pwd = request.getParameter("pwd");
 				pwd2 = request.getParameter("pwd2");
 				
-				if (pwd.equals(pwd2) && pwd != null) {
-					hashedPwd = BCrypt.hashpw(pwd, BCrypt.gensalt());
-				}
 				user = new User(uid, hashedPwd, uname, nickName, email);
 				uSvc.updateUser(user);
-				response.sendRedirect("/mp/1.mini/user/list?page=1");
+				response.sendRedirect("/mp/mini/user/list?page=1");
 			}
 			break;
 			
-			/*
-			 * 
-			 */
+			
 		case "delete":
 			uid = request.getParameter("uid");
 			uSvc.deleteUser(uid);
-			response.sendRedirect("/mp/1.mini/user/list?page=1");
+			response.sendRedirect("/mp/mini/user/list?page=1");
 			break;
 		}
 	}

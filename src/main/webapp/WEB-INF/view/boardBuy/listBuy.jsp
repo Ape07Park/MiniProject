@@ -16,7 +16,7 @@ td, th {
 	function search() {
 		const field = $('#field').val();
 		const query = $('#query').val();
-		location.href = '/mp/mini/board/listAuction?p=${currentBoardPage}&f='
+		location.href = '/mp/mini/board/listBuy?p=${currentBoardPage}&f='
 				+ field + '&q=' + query;
 	}
 </script>
@@ -32,10 +32,10 @@ td, th {
 					<tr>
 						<td style="width: 52%; text-align: left">
 							<h3>
-								<strong class="me-5"><i class="fa-solid fa-person-skiing" style="padding-right: 10px; "></i> 역경매 - 렌탈</strong> <span
+								<strong class="me-5"><i class="fa-solid fa-person-snowboarding" style="padding-right: 10px; "></i>역경매 - 구매</strong> <span
 									style="font-size: 16px"><a
-									href="/mp/mini/board/insertAuction"><i
-										class="fa-solid fa-pen-to-square"></i>렌탈 등록</a></span>
+									href="/mp/mini/board/insertBuy"><i
+										class="fa-solid fa-pen-to-square"></i>구매 등록</a></span>
 							</h3>
 						</td>
 						<td style="width: 16%"><select class="form-control"
@@ -77,7 +77,7 @@ td, th {
 							<td>${board.bid}</td>
 							<td>${fn:substring(fn:replace(board.applTime,"T"," "), 2, 16)}</td>
 							<td>${board.uid}</td>
-							<td><a href="/mp/mini/board/detailAuction?bid=${board.bid}">${board.processTitle}</a>
+							<td><a href="/mp/mini/board/detailBuy?bid=${board.bid}">${board.processTitle}</a>
 							<td>${board.avgPrice}</td>
 							<td>${board.numOfCompany}</td>
 							<td><c:if test="${board.process eq 0}">
@@ -97,7 +97,7 @@ td, th {
 					<c:forEach var="page" items="${pageList}">
 						<li class="page-item ${currentBoardPage eq page ? 'active' : ''}">
 							<a class="page-link"
-							href="/mp/mini/board/listAuction?p=${page}&f=${field}&q=${query}">${page}</a>
+							href="/mp/mini/board/listBuy?p=${page}&f=${field}&q=${query}">${page}</a>
 						</li>
 					</c:forEach>
 					<li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-greater-than"></i></a></li>

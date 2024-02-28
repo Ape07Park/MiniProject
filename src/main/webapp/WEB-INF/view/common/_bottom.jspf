@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
-		<div class="container-fluid justify-content-center">
-			<span class="navbar-text">
-				Copyright &copy; 2024 CK World Corp. All rights reserved.
-			</span>
-		</div>
-	</nav>
+  <nav class="border d-flex justify-content-between navbar navbar-expand-sm bg-light fixed-bottom">
+    <div class="container-fluid">
+      <span class="navbar-text">
+      	(주)<b>스키타루와</b> 대표이사: 안순현 | 사업자등록번호 : 123412345<br>
+      	경기도 수원시 팔달구 중부대로 100 3층 | E-mail : yonghyunk09@gmail.com<br>
+      	대표번호 : 010-9289-0372<br>
+        Copyright &copy; 2024 스키타루왕. All rights reserved.
+      </span>
+    </div>
+    <div>
+    <img src="/mp/img/Taruwa_LOGO.png" height="50">
+    </div>
+  </nav>

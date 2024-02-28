@@ -21,23 +21,24 @@ td, th {
 			<!-- ============본문영역============ -->
 			<div class="col-9">
 				<h3>
-					<strong class="me-5">게시글 쓰기</strong>
+					<strong class="me-5">게시글 수정</strong>
 				</h3>
 				<hr>
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col-10">
-						<form action="/mp/mini/board/insertAuction" method="post">
+						<form action="/mp/mini/board/updateBuy" method="post">
+						<input type="hidden" name="bid" value="${board.bid}">
+						<input type="hidden" name="uid" value="${board.uid}">
 							<table class="table table-borderless">
 								<tr>
 									<td style="width: 10%;"><label class="col-form-label">제목</label></td>
-									<td style="width: 90%;"><input type="text"
-										name="processTitle" class="form-control"></td>
+									<td style="width: 90%;"><input type="text" name="processTitle" class="form-control" value="${board.processTitle}"></td>
 								</tr>
 								<tr>
 									<td><label class="col-form-label">내용</label></td>
 									<td><textarea class="form-control" rows="10"
-											name="processContent"></textarea></td>
+											name="processContent">${board.processContent}</textarea></td>
 								</tr>
 								<tr>
 									<td colspan="2">

@@ -32,9 +32,9 @@ function deleteFunc(bid) {
 				<h3>
 					<strong class="me-5">게시글 보기</strong>
 					<span style="font-size: 16px">
-						<a href="/mp/mini/board/listAuction?p=${currentBoardPage}"><i class="fa-solid fa-table-list"></i>목록</a>
+						<a href="/mp/mini/board/listBuy?p=${currentBoardPage}"><i class="fa-solid fa-table-list"></i>목록</a>
 						<c:if test="${sessUid eq board.uid}">
-							 <a	href="/mp/mini/board/updateAuction?bid=${board.bid}">
+							 <a	href="/mp/mini/board/updateBuy?bid=${board.bid}">
 								<i class="fa-solid fa-file-pen ms-3"></i> 수정</a> 
 								<a href="javascript:deleteFunc('${board.bid}')">
 								<i class="fa-solid fa-eraser ms-3"></i> 삭제</a>
@@ -66,7 +66,7 @@ function deleteFunc(bid) {
 						<div class="modal-body">
 							정말로 삭제 하시겠습니까?
 							<div class="text-center mt-5">
-								<form action="/mp/mini/board/deleteAuction" method="post">
+								<form action="/mp/mini/board/deleteBuy" method="post">
 									<input type="hidden" id="deleteBid" name="bid">
 									<button class="btn btn-danger" type="submit">삭제</button>
 								</form>

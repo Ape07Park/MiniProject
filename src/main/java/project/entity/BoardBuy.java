@@ -2,7 +2,7 @@ package project.entity;
 
 import java.time.LocalDate;
 
-public class BoardAuction { // 경매 게시판
+public class BoardBuy { // 경매 게시판
 	private int bid; // 게시판 번호
 	private String uid; // 유저 아이디
 	private LocalDate applTime; // 신청 시간
@@ -14,16 +14,16 @@ public class BoardAuction { // 경매 게시판
 	private int process; // 진행 사항 - 3가지
 	private int isDeleted;
 
-	public BoardAuction() {
+	public BoardBuy() {
 	}
 
-	public BoardAuction(int bid, String processTitle, String processContent) {
+	public BoardBuy(int bid, String processTitle, String processContent) {
 		this.bid = bid;
 		this.processTitle = processTitle;
 		this.processContent = processContent;
 	}
 
-	public BoardAuction(int bid, String uid, LocalDate applTime, String nickName, String processTitle,
+	public BoardBuy(int bid, String uid, LocalDate applTime, String nickName, String processTitle,
 			String processContent) {
 		this.bid = bid;
 		this.uid = uid;
@@ -33,7 +33,7 @@ public class BoardAuction { // 경매 게시판
 		this.processContent = processContent;
 	}
 
-	public BoardAuction(int bid, String uid, LocalDate applTime, String nickName, String processTitle,
+	public BoardBuy(int bid, String uid, LocalDate applTime, String nickName, String processTitle,
 			String processContent, int avgPrice, int numOfCompany, int process, int isDeleted) {
 		this.bid = bid;
 		this.uid = uid;
