@@ -17,7 +17,7 @@ td, th {
 
 	<div class="container" style="margin-top: 80px">
 		<div class="row">
-			<%@ include file="../common/_aside.jspf"%>
+
 
 			<!-- ============본문영역============ -->
 			<div class="col-9">
@@ -28,7 +28,7 @@ td, th {
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col-10">
-						<form action="/jw/bbs/board/update" method="post">
+						<form action="/mp/mini/board/updateBoardAdvice" method="post">
 						<input type="hidden" name="bid" value="${board.bid}">
 						<input type="hidden" name="uid" value="${board.uid}">
 							<table class="table table-borderless">

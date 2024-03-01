@@ -3,6 +3,7 @@ package project.service;
 import java.util.List;
 
 import project.dao.BoardAuctionDao;
+import project.entity.BoardAdvice;
 import project.entity.BoardAuction;
 import project.entity.BoardBuy;
 
@@ -46,10 +47,20 @@ public class BoardAuctionServiceImpl implements BoardAuctionService {
 	}
 
 	@Override
-	public void updateBoard(BoardAuction boardAuction, String pack) {
-		bDao.updateBoard(boardAuction, pack);
+	public void updateBoard(BoardAuction boardAuc, String pack) {
+		bDao.updateBoard(boardAuc, pack);
 	}
 
+	@Override
+	public void insertBoard(BoardBuy boardBuy, String pack) {
+		bDao.insertBoard(boardBuy, pack);
+	}
+
+	@Override
+	public void updateBoard(BoardBuy boardBuy, String pack) {
+		bDao.updateBoard(boardBuy, pack);
+	}
+	
 	@Override
 	public void deleteBoard(int bid, String pack) {
 		bDao.deleteBoard(bid, pack);
@@ -65,5 +76,7 @@ public class BoardAuctionServiceImpl implements BoardAuctionService {
 //	public void increaseReplyCount(int bid) {
 //		bDao.increaseCount("replyCount", bid);
 //	}
+
+
 
 }

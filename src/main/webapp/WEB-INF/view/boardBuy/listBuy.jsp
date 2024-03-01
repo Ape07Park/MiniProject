@@ -32,10 +32,11 @@ td, th {
 					<tr>
 						<td style="width: 52%; text-align: left">
 							<h3>
-								<strong class="me-5"><i class="fa-solid fa-person-snowboarding" style="padding-right: 10px; "></i>역경매 - 구매</strong> <span
-									style="font-size: 16px"><a
-									href="/mp/mini/board/insertBuy"><i
-										class="fa-solid fa-pen-to-square"></i>구매 등록</a></span>
+								<strong class="me-5"><i class="fa-solid fa-person-snowboarding" style="padding-right: 10px; "></i>역경매 - 구매</strong> 
+								<span style="font-size: 16px">
+								<a href="/mp/mini/board/listBuy"><i class="fa-solid fa-list"></i></i>전체 리스트</a>
+									<a href="/mp/mini/board/insertBuy" style="margin: 15px"><i class="fa-solid fa-pen-to-square"></i>구매 등록</a>
+								</span>
 							</h3>
 						</td>
 						<td style="width: 16%"><select class="form-control"
@@ -104,6 +105,9 @@ td, th {
 				</ul>
 
 			</div>
+			<c:if test="${not empty sessUid}">
+				<%@ include file="../common/_aside.jspf"%>
+			</c:if>
 		</div>
 	</div>
 

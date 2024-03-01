@@ -48,13 +48,14 @@ public class UserServiceImpl implements UserService {
 
    @Override
    public int login(String uid, String pwd) {
-      User user = userDao.getUserByUid(uid);
-      if (user == null)
-         return USER_NOT_EXIST;
-      if (pwd.equals(user.getPwd()))
-         return CORRECT_LOGIN;
-      return WRONG_PASSWORD;
-   }
+	   User user = userDao.getUserByUid(uid);
+		if (user == null)
+			return USER_NOT_EXIST;
+		if (BCrypt.checkpw(pwd, user.getPwd()))
+			return CORRECT_LOGIN;
+		return WRONG_PASSWORD;
+	}
+   
 
    @Override
    public int getUserCount() {

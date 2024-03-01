@@ -19,13 +19,12 @@
 <body>
 	<%@ include file="../common/_top.jspf" %>
 	
-	<div class="container" style="margin-top:px">
+	<div class="container" style="margin-top: 50px">
 		<div class="row">
-			<%@ include file="../common/_aside.jspf" %>
 			
 			<div class="col-9">
 				<h3><strong class="me-5">사용자 목록</strong>
-					<span style="font-size:16px"><a href="/mp/1.mini/user/register"><i class="fa-solid fa-user-plus"></i> 사용자 가입</a></span>
+					<span style="font-size:16px"><a href="/mp/mini/user/register"><i class="fa-solid fa-user-plus"></i> 사용자 가입</a></span>
 				</h3>
 				<hr>
 				<div class="row">
@@ -45,7 +44,7 @@
 									<!-- 본인만 수정 o, * 본인이다, 아니다에 따라 권한 다르게 부여-->
 									
 									<c:if test="${user.uid eq sessUid}">	
-										<a href="/mp/1.mini/user/update?uid=${user.uid}"><i class="fa-solid fa-user-pen"></i></a>
+										<a href="/mp/mini/user/update?uid=${user.uid}"><i class="fa-solid fa-user-pen"></i></a>
 									</c:if>
 									<c:if test="${user.uid ne sessUid}">
 										<a href="#" class="disabled-link"><i class="fa-solid fa-user-pen"></i></a>
@@ -68,7 +67,7 @@
 							<li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-less-than"></i></a></li>
 							<c:forEach var="page" items= "${pageList}">
 								<li class="page-item ${currentUserPage eq page ? 'active' : ''}">
-									<a class="page-link" href="/mp/1.mini/user/list?page=${page}">${page}</a>
+									<a class="page-link" href="/mp/mini/user/list?page=${page}">${page}</a>
 								</li>
 							</c:forEach>
 							
@@ -97,7 +96,7 @@
 				<div class="modal-body">
 					<strong>정말로 탈퇴하시겠습니까?</strong>
 					<div class="text-center mt-5">
-						<form action="/mp/1.mini/user/delete" method="post">
+						<form action="/mp/mini/user/delete" method="post">
 							<input type="hidden" id="deleteUid" name="uid">
 							<button class="btn btn-danger" type="submit">탈퇴</button>
 						</form>

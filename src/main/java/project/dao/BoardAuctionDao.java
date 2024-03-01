@@ -170,6 +170,42 @@ public class BoardAuctionDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public void insertBoard(BoardBuy boardBuy, String pack) {
+		Connection conn = getConnection();
+		String sql = "insert into " + pack
+				+ " values (default, ?, default, ?, ?, ?, default, default, default, default)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardBuy.getUid());
+			pstmt.setString(2, boardBuy.getNickName());
+			pstmt.setString(3, boardBuy.getProcessTitle());
+			pstmt.setString(4, boardBuy.getProcessContent());
+
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void updateBoard(BoardBuy boardBuy, String pack) {
+		Connection conn = getConnection();
+		String sql = "update " + pack + " set processTitle=?, processContent=? where bid=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardBuy.getProcessTitle());
+			pstmt.setString(2, boardBuy.getProcessContent());
+			pstmt.setInt(3, boardBuy.getBid());
+
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public void deleteBoard(int bid, String pack) {
 		Connection conn = getConnection();

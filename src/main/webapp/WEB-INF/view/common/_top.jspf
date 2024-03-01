@@ -5,19 +5,17 @@
 <nav class="py-2 bg-body-tertiary border-bottom">
     <div class="container d-flex flex-wrap">
       <ul class="nav me-auto">
-        <li class="nav-item"><a href="/mp/1.mini/board/listAuction" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+        <li class="nav-item"><a href="/mp/mini/main" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
       </ul>
       <ul class="nav">
         <c:if test="${empty sessUid}">
-				<a class="nav-link" href="/mp/1.mini/user/login" style="color: navy;">
+				<a class="nav-link" href="/mp/mini/user/login" style="color: navy;">
 					<i class="fas fa-sign-in-alt"></i>로그인
 				</a>
-        <li class="nav-item"><a href="/mp/1.mini/user/register" class="nav-link link-body-emphasis px-2">회원가입</a></li>
+        <li class="nav-item"><a href="/mp/mini/user/register" class="nav-link link-body-emphasis px-2">회원가입</a></li>
 		</c:if> 
 		<c:if test="${not empty sessUid}">
-			<a class="nav-link" href="/mp/1.mini/user/logout" style="color: navy;">
+			<a class="nav-link" href="/mp/mini/user/logout" style="color: navy;">
 				<i class="fas fa-sign-out-alt"></i>로그아웃
 			</a>
 		</c:if>
@@ -28,42 +26,34 @@
     </div>
 </nav>
 <header class="py-3 border-bottom">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+    <div class="container d-flex flex-wrap align-items-center">
         <ul class="nav">
-            <span><a href="#"><img src="/mp/img/Taruwa_LOGO.png" height="100"></a></span>
+            <span><a href="/mp/mini/main"><img src="/mp/img/Taruwa_LOGO.png" height="100"></a></span>
         </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex align-items-center">
-            <input type="search" class="form-control me-2" placeholder="Search..." aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit" style="white-space: nowrap;">검색</button>
-        </form>
     </div>
 </header>
-<header class="py-3 border-bottom">
-    <div class="container d-flex flex-wrap justify-content-center">
-        <ul class="nav">
+<header class="py-3 border-bottom" style="background-color: skyblue;">
+    <div class="container d-flex flex-wrap justify-content-center" style="font-size: 25px;">
+        <ul class="nav" >
             <li class="nav-item dropdown ms-10">
-                <a class="nav-link dropdown-toggle" style="color: navy;" href="#" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-brain"></i> 장비
+                <a class="nav-link" style="color: navy;" href="/mp/mini/equipment/list">
+                    <i class="fa-solid fa-tags"></i> 장비
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Link 1</a></li>
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Link 2</a></li>
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Link 3</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Another link</a></li>
-                </ul>
             </li>
             <li class="nav-item dropdown ms-5">
                 <a class="nav-link dropdown-toggle" style="color: navy;" href="#" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-brain"></i> 거래
+                    <i class="fa-solid fa-basket-shopping"></i> 거래
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Link 1</a></li>
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Link 2</a></li>
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Link 3</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" style="color: navy;" href="#">Another link</a></li>
+                    <li><a class="dropdown-item" style="color: navy;" href="/mp/mini/board/listAuction">렌탈</a></li>
+                    <li><a class="dropdown-item" style="color: navy;" href="/mp/mini/board/listBuy">구매</a></li>
+                    <li><a class="dropdown-item" style="color: navy;" href="/mp/mini/board/listBoardAdvice">자유게시판<i class="fa-solid fa-comments" style="padding-left: 15px;"></i></a></li>
                 </ul>
+            </li>
+            <li class="nav-item dropdown ms-10" style="margin-left: 25px">
+                <a class="nav-link" style="color: navy;" href="/mp/mini/board/qna">
+                    <i class="fa-solid fa-clipboard-question fa-fw"></i> QnA
+                </a>
             </li>
         </ul>
     </div>

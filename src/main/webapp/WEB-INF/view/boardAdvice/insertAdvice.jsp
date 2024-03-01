@@ -17,7 +17,6 @@ td, th {
 
 	<div class="container" style="margin-top: 80px">
 		<div class="row">
-			<%@ include file="../common/_aside.jspf"%>
 
 			<!-- ============본문영역============ -->
 			<div class="col-9">
@@ -28,7 +27,7 @@ td, th {
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col-10">
-						<form action="/jw/bbs/board/insert" method="post">
+						<form action="/mp/mini/board/insertBoardAdvice" method="post">
 							<table class="table table-borderless">
 								<tr>
 									<td style="width: 10%;"><label class="col-form-label">제목</label></td>

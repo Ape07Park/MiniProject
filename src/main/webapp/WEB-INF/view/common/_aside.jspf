@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<div class="col-3">
-  <img src="https://picsum.photos/256/256" class="rounded-circle" width="90%">
-  <div class="mt-2">
-    오늘의 명언을 이 자리에 적습니다.
-    <a href="#"><span class="badge bg-secondary">수정</span></a>
-  </div>
-  <div class="mt-5">
-     <i class="fa fa-envelope me-2"></i>ash7106@naver.com<br>
-     <i class="fa-brands fa-github me-2"></i><a href="#">SonnHyun An</a><br>
-     <i class="fa-brands fa-instagram me-2"></i><a href="#">soon_hyun</a><br>
-     <i class="fa-solid fa-location-dot me-2"></i> 수원시 팔달구
-     <a href="#"><span class="badge bg-secondary">날씨</span></a><br>
-     <button class="btn btn-sm btn-outline-primary mt-3">Edit Profile</button>
-  </div>
+
+    
+<div class="col-3" style="text-align: center;">
+  <div class="card" style="width: 20rem;">
+   <img src="/mp/img/asidebanner.gif" width="100%">
+		<div class="card-body">
+		    <h5 class="card-title" style="color: navy; font-weight: bolder">스키타루와에 오신걸 환영합니다!</h5>
+		    <p class="card-text">모든 스키 장비 거래가 가능한 곳</p>
+    		<button class="btn btn-outline-primary" onclick="searchMyAuction()">내경매</button>
+    		<a href="/mp/mini/user/update?uid=${sessUid}" class="btn btn-primary">마이페이지</a>
+  		</div>
+	</div>
 </div>

@@ -14,17 +14,15 @@
 
 	<div class="container" style="margin-top: 80px">
 		<div class="row">
-			<%@ include file="../common/_aside.jspf"%>
-
 			<div class="col-9">
 				<h3>
-					<strong>사용자 수정1</strong>
+					<strong>사용자 수정</strong>
 				</h3>
 				<hr>
 				<div class="row">
 					<div class="col-3"></div>
 					<div class="col-6">
-						<form action="/mp/1.mini/user/update" method="post">
+						<form action="/mp/mini/user/update" method="post">
 							<input type="hidden" name="uid" value=${user.uid}> <input
 								type="hidden" name="hashedPwd" value=${user.pwd}>
 							<table class=" table table-borderless">
