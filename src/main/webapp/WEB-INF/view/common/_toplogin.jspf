@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<nav class="py-2 bg-body-tertiary border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="/mp/mini/main" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+      </ul>
+      <ul class="nav">
+        <c:if test="${empty sessUid}">
+				<a class="nav-link" href="/mp/mini/user/login" style="color: navy;">
+					<i class="fas fa-sign-in-alt"></i>로그인
+				</a>
+        <li class="nav-item"><a href="/mp/mini/user/register" class="nav-link link-body-emphasis px-2">회원가입</a></li>
+		</c:if> 
+		<c:if test="${not empty sessUid}">
+			<a class="nav-link" href="/mp/mini/user/logout" style="color: navy;">
+				<i class="fas fa-sign-out-alt"></i>로그아웃
+			</a>
+		</c:if>
+      </ul>
+      <c:if test="${not empty sessUid}">
+      	<span style="margin-left: 30px" class="navbar-text me-3"> ${sessUname}님 환영합니다.</span>
+      </c:if>
+    </div>
+</nav>
+<header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+        <ul class="nav">
+            <span><a href="#"><img src="/mp/img/skitaruwa2nd.png" height="100"></a></span>
+        </ul>
+    </div>
+</header>

@@ -9,20 +9,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import project.entity.BoardAuction;
 import project.entity.BoardBuy;
-import project.entity.Reply;
 import project.service.BoardAuctionService;
 import project.service.BoardAuctionServiceImpl;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet({ "/mini/board/listAuction", "/mini/board/insertAuction", "/mini/board/updateAuction",
-		"/mini/board/deleteAuction", "/mini/board/detailAuction", "/mini/board/listBuy",
-		"/mini/board/insertBuy", "/mini/board/updateBuy", "/mini/board/deleteBuy", "/mini/board/detailBuy" })
+    "/mini/board/deleteAuction", "/mini/board/detailAuction", "/mini/board/listBuy",
+    "/mini/board/insertBuy", "/mini/board/updateBuy", "/mini/board/deleteBuy", "/mini/board/detailBuy" })
 public class BoardAuctionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private BoardAuctionService bAucSvc = new BoardAuctionServiceImpl();
@@ -107,9 +104,6 @@ public class BoardAuctionController extends HttpServlet {
 			boardAuc = bAucSvc.getBoard(bid, pack);
 			request.setAttribute("board", boardAuc);
 
-			List<Reply> replyList = null;
-			request.setAttribute("replyList", replyList);
-
 			rd = request.getRequestDispatcher("/WEB-INF/view/boardAuction/detailAuction.jsp");
 			rd.forward(request, response);
 			break;
@@ -189,7 +183,7 @@ public class BoardAuctionController extends HttpServlet {
 				processTitle = request.getParameter("processTitle");
 				processContent = request.getParameter("processContent");
 				boardBuy = new BoardBuy(bid, uid, applTime, sessNickName, processTitle, processContent);
-				bAucSvc.insertBoard(boardAuc, pack);
+				bAucSvc.insertBoard(boardBuy, pack);
 				response.sendRedirect("/mp/mini/board/listBuy");
 			}
 			break;
@@ -202,9 +196,6 @@ public class BoardAuctionController extends HttpServlet {
 
 			boardAuc = bAucSvc.getBoard(bid, pack);
 			request.setAttribute("board", boardAuc);
-
-			List<Reply> replyList = null;
-			request.setAttribute("replyList", replyList);
 
 			rd = request.getRequestDispatcher("/WEB-INF/view/boardBuy/detailBuy.jsp");
 			rd.forward(request, response);
@@ -235,12 +226,27 @@ public class BoardAuctionController extends HttpServlet {
 				processContent = request.getParameter("processContent");
 				boardBuy = new BoardBuy(bid, processTitle, processContent);
 
-				bAucSvc.updateBoard(boardAuc, pack);
+				bAucSvc.updateBoard(boardBuy, pack);
 				response.sendRedirect("/mp/mini/board/detailBuy?bid=" + bid + "&uid=" + uid);
 			}
 			break;
 		}
 
-		}
+		case "qna": {
+			List<String> qna = new ArrayList<String>();
+			qna.add("Q1) 로그인이 안될 때 어떻게 해야하나요?");
+			qna.add("A1) 홈페이지 상단 오른쪽에 메뉴버튼을 누르시고 설정에서 쿠기삭제 후 다시 시도해 보세요.");
+			qna.add("Q2) 구매 또는 렌탈 화면이 안나올 때 어떻게 해야하나요?");
+			qna.add("A2) 홈페이지 상단 오른쪽에 메뉴버튼을 누르시고 설정에서 팝업창 설정을 ON 하세요.");
+			qna.add("Q3) 구매 또는 렌탈 취소 연락은 어디로 해야합니까?");
+			qna.add("A3) 저희 회사로 전화주셔서 문의 주시면 연결해 드리겠습니다.");
+			qna.add("Q4) 구매자가 환불을 해달라고 할 때 규정이 어떻게 됩니까?");
+			qna.add("A4) 2주 이내에 포장을 뜯지 않은 상태에서 단순변심이 아닌 경우 가능합니다.");
+			
+			request.setAttribute("qna", qna);
+			
+			rd = request.getRequestDispatcher("/WEB-INF/view/common/qna.jsp");
+			rd.forward(request, response);
+			break;
 	}
-}
+}}}

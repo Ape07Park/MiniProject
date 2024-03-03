@@ -26,7 +26,7 @@ public class UserDao {
 
 			
 			// DB 위치값 찾아 ds에 저장  ** bbs 수정할 것 
-			DataSource ds = (DataSource) initContext.lookup("java:comp/env/" + "jdbc/1.mini"); 
+			DataSource ds = (DataSource) initContext.lookup("java:comp/env/" + "jdbc/mini"); 
 			
 			// DB와 연결 
 			conn = ds.getConnection();

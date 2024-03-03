@@ -2,35 +2,49 @@ package project.entity;
 
 import java.time.LocalDate;
 
-public class BoardAdvice {  	// 경매 게시판
-	private int bid; 			// 글 번호
-	private String uname; 		// 작성자
-	private String title; 		// 제목
-	private String content; 	// 내용
-	private LocalDate modTime; 	// 작성일
-	private int viewCount; 		// 조회수
-	private int replyCount; 	// 댓글 개수
+public class BoardAdvice { // 경매 게시판
+	private int bid; // 글 번호
+	private String uid; // 작성자
+	private String title; // 제목
+	private String content; // 내용
+	private LocalDate modTime; // 작성일
+	private int isDeleted;
+	private int viewCount; // 조회수
+	private int replyCount; // 댓글 개수
 
-	public BoardAdvice(int bid, String uname, String title, String content, LocalDate modTime, int viewCount,
-			int replyCount) {
-		super();
+	public BoardAdvice(int bid, String uid, String title, String content, LocalDate modTime, int isDeleted,
+			int viewCount, int replyCount) {
 		this.bid = bid;
-		this.uname = uname;
+		this.uid = uid;
 		this.title = title;
 		this.content = content;
 		this.modTime = modTime;
+		this.isDeleted = isDeleted;
 		this.viewCount = viewCount;
 		this.replyCount = replyCount;
 	}
 
 	public BoardAdvice() {
+	}
+
+	public BoardAdvice(int bid, String title, String content) {
 		super();
+		this.bid = bid;
+		this.title = title;
+		this.content = content;
+	}
+
+	public BoardAdvice(String uid, String title, String content) {
+		this.uid = uid;
+		this.title = title;
+		this.content = content;
 	}
 
 	@Override
 	public String toString() {
-		return "BoardAuction [bid=" + bid + ", uname=" + uname + ", title=" + title + ", content=" + content
-				+ ", modTime=" + modTime + ", viewCount=" + viewCount + ", replyCount=" + replyCount + "]";
+		return "BoardAdvice [bid=" + bid + ", uid=" + uid + ", title=" + title + ", content=" + content + ", modTime="
+				+ modTime + ", isDeleted=" + isDeleted + ", viewCount=" + viewCount + ", replyCount=" + replyCount
+				+ "]";
 	}
 
 	public int getBid() {
@@ -41,12 +55,12 @@ public class BoardAdvice {  	// 경매 게시판
 		this.bid = bid;
 	}
 
-	public String getUname() {
-		return uname;
+	public String getUid() {
+		return uid;
 	}
 
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	public String getTitle() {
@@ -71,6 +85,14 @@ public class BoardAdvice {  	// 경매 게시판
 
 	public void setModTime(LocalDate modTime) {
 		this.modTime = modTime;
+	}
+
+	public int getIsDeleted() {
+		return isDeleted;
+	}
+
+	public void setIsDeleted(int isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	public int getViewCount() {
