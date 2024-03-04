@@ -17,7 +17,6 @@ td, th {
 
 	<div class="container" style="margin-top: 50px">
 		<div class="row">
-			<%@ include file="../common/_aside.jspf"%>
 
 			<!-- ============본문영역============ -->
 			<div class="col-9">

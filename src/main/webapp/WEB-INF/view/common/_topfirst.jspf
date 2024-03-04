@@ -9,7 +9,9 @@
       </ul>
       <ul class="nav">
             <li class="nav-item"><a href="/mp/mini/board/listAuction" class="nav-link link-body-emphasis px-2">경매</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">게시판</a></li>
+
+            <li class="nav-item"><a href="/mp/mini/board/listBoardAdvice" class="nav-link link-body-emphasis px-2">게시판</a></li>
+
          <c:if test="${empty sessUid}">
             <a class="nav-link" href="/mp/mini/user/login" style="color: navy;">
                <i class="fas fa-sign-in-alt"></i>로그인

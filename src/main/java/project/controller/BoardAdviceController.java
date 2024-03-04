@@ -78,7 +78,9 @@ public class BoardAdviceController extends HttpServlet {
 				content = request.getParameter("content");
 				boardAdv = new BoardAdvice(sessUid, title, content);
 				b1Svc.insertBoard(boardAdv);
+
 				response.sendRedirect("/mp/mini/boardAdvice/listBoardAdvice?p=1");
+
 			}
 			break;
 		}
@@ -86,11 +88,14 @@ public class BoardAdviceController extends HttpServlet {
 		
 		case "detailBoardAdvice": {
 			bid = Integer.parseInt(request.getParameter("bid"));
-			uid = request.getParameter("uid");
-			if (!uid.equals(sessUid))
-				b1Svc.increaseViewCount(bid);
 
-			boardAdv = b1Svc.getBoard(bid);
+			boardAdv = b1Svc.getBoardAdvice(bid);
+			 String uidParameter = request.getParameter("uid");
+			    if (uidParameter != null && !uidParameter.equals(sessUid)) {
+			        b1Svc.increaseViewCount(bid);
+			    }
+			
+
 			request.setAttribute("board", boardAdv);
 
 			rd = request.getRequestDispatcher("/WEB-INF/view/boardAdvice/detailAdvice.jsp");
@@ -113,7 +118,9 @@ public class BoardAdviceController extends HttpServlet {
 		case "updateBoardAdvice": {
 			if (method.equals("GET")) {
 				bid = Integer.parseInt(request.getParameter("bid"));
-				boardAdv = b1Svc.getBoard(bid);
+
+				boardAdv = b1Svc.getBoardAdvice(bid);
+
 				request.setAttribute("board", boardAdv);
 				rd = request.getRequestDispatcher("/WEB-INF/view/boardAdvice/updateAdvice.jsp");
 				rd.forward(request, response);

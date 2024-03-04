@@ -9,7 +9,8 @@ public interface BoardAdviceService {
 
 	List<BoardAdvice> getBoardAdviceList(int page, String field, String query);
 
-	BoardAdvice getBoard(int bid);
+
+	BoardAdvice getBoardAdvice(int bid);
 
 	int getBoardCount(String field, String query);
 
@@ -22,5 +23,9 @@ public interface BoardAdviceService {
 	void increaseViewCount(int bid);
 
 	void increaseReplyCount(int bid);
+
+
+
+
 
 }

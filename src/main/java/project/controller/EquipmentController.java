@@ -42,9 +42,7 @@ public class EquipmentController extends HttpServlet {
 			session.setAttribute("currentUserPage", page);
 			List<Equipment> equipList = eSvc.getEquipmentList(page);
 
-			// * 내용물 안나오면 size 찍어보기
-			System.out.println(equipList.size());
-			System.out.println(equipList.get(7));
+
 
 			// 모델에서 가져오기: "list"에 list 값 세팅
 			request.setAttribute("equipList", equipList);

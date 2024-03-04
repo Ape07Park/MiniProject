@@ -89,9 +89,11 @@ public class BoardAdviceDao {
 		String sql = "insert into boardadvice values (default, ?, ?, ?, default, default, default, default)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, boardAd.getTitle());
+
+			pstmt.setString(1, boardAd.getUid());
 			pstmt.setString(2, boardAd.getContent());
-			pstmt.setString(3, boardAd.getUid());
+			pstmt.setString(3, boardAd.getTitle());
+
 			
 			pstmt.executeUpdate();
 			pstmt.close(); conn.close();
@@ -118,7 +120,9 @@ public class BoardAdviceDao {
 	
 	public void deleteBoardAdvice(int bid) {
 		Connection conn = getConnection();
-		String sql = "delete boardadvice where bid=?";
+
+		String sql = "delete from boardadvice where bid=?";
+
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bid);

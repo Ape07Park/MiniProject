@@ -17,7 +17,7 @@ public class BoardAdviceServiceImpl implements BoardAdviceService {
 	}
 
 	@Override
-	public BoardAdvice getBoard(int bid) {
+	public BoardAdvice getBoardAdvice(int bid) {
 		return bDao.getBoardAdvice(bid);
 	}
 
