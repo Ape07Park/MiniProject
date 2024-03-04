@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet({ "/mini/board/listAuction", "/mini/board/insertAuction", "/mini/board/updateAuction",
-    "/mini/board/deleteAuction", "/mini/board/detailAuction", "/mini/board/listBuy",
-    "/mini/board/insertBuy", "/mini/board/updateBuy", "/mini/board/deleteBuy", "/mini/board/detailBuy" })
+		"/mini/board/deleteAuction", "/mini/board/detailAuction", "/mini/board/listBuy", "/mini/board/insertBuy",
+		"/mini/board/updateBuy", "/mini/board/deleteBuy", "/mini/board/detailBuy", "/mini/board/qna" })
 public class BoardAuctionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private BoardAuctionService bAucSvc = new BoardAuctionServiceImpl();
@@ -62,7 +62,7 @@ public class BoardAuctionController extends HttpServlet {
 
 			// for pagination
 			int totalItems = bAucSvc.getBoardCount(field, query, pack);
-			int totalPages = (int) Math.ceil(totalItems * 1.0 / bAucSvc.COUNT_PER_PAGE);
+			int totalPages = (int) Math.ceil((totalItems + 1) * 1.0 / bAucSvc.COUNT_PER_PAGE);
 			List<String> pageList = new ArrayList<String>();
 			for (int i = 1; i <= totalPages; i++)
 				pageList.add(String.valueOf(i));
@@ -242,11 +242,13 @@ public class BoardAuctionController extends HttpServlet {
 			qna.add("A3) 저희 회사로 전화주셔서 문의 주시면 연결해 드리겠습니다.");
 			qna.add("Q4) 구매자가 환불을 해달라고 할 때 규정이 어떻게 됩니까?");
 			qna.add("A4) 2주 이내에 포장을 뜯지 않은 상태에서 단순변심이 아닌 경우 가능합니다.");
-			
+
 			request.setAttribute("qna", qna);
-			
+
 			rd = request.getRequestDispatcher("/WEB-INF/view/common/qna.jsp");
 			rd.forward(request, response);
 			break;
+		}
+		}
 	}
-}}}
+}

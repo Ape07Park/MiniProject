@@ -26,9 +26,16 @@
     </div>
 </nav>
 <header class="py-3 border-bottom">
-    <div class="container d-flex flex-wrap align-items-center">
+    <div class="container d-flex flex-wrap align-items-center"  style="justify-content: space-between;">
         <ul class="nav">
             <span><a href="/mp/mini/main"><img src="/mp/img/Taruwa_LOGO.png" height="100"></a></span>
+        </ul>
+        <ul>
+            <h1 class="fifth" style="font-size: 50px;">스   키   타   루   와</h1>
+            <h3 style="text-align: center;"> Ski Taruwa</h3>
+        </ul>
+        <ul>
+        	<h1>  &nbsp; </h1>
         </ul>
     </div>
 </header>

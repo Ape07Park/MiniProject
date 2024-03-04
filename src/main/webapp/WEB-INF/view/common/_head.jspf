@@ -17,11 +17,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
 	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 	crossorigin="anonymous"></script>
-	<script>
-   function searchMyAuction() {
-      location.href = '/mp/mini/board/listAuction?p=${currentBoardPage}&f=uid&q=${sessUid}';
-   }
-</script>
+
 <style>
 * {
 	font-family: 'Noto Sans KR', sans-serif;
@@ -34,5 +30,17 @@ a {
 
 .disabled-link {
 	pointer-events: none;
+}
+
+h1.fifth {
+  font-weight: 400;
+  text-shadow: 
+    3px 3px 0
+    dodgerblue;
+  transition: all 0.2s ease;
+}
+
+h1.fifth:hover {
+  text-shadow: 0 0 0 dodgerblue;
 }
 </style>

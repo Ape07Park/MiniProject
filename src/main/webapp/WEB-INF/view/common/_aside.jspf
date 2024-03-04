@@ -5,11 +5,12 @@
     
 <div class="col-3" style="text-align: center;">
   <div class="card" style="width: 20rem;">
+  <br>
    <img src="/mp/img/asidebanner.gif" width="100%">
 		<div class="card-body">
 		    <h5 class="card-title" style="color: navy; font-weight: bolder">스키타루와에 오신걸 환영합니다!</h5>
 		    <p class="card-text">모든 스키 장비 거래가 가능한 곳</p>
-    		<button class="btn btn-outline-primary" onclick="searchMyAuction()">내경매</button>
+    		<button class="btn btn-outline-primary" onclick="search()">내 게시글</button>
     		<a href="/mp/mini/user/update?uid=${sessUid}" class="btn btn-primary">마이페이지</a>
   		</div>
 	</div>

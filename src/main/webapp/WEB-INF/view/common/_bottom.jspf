@@ -3,14 +3,14 @@
     <nav style="margin-bottom: 150px;"></nav>
   <nav class="border d-flex justify-content-between navbar navbar-expand-sm bg-light fixed-bottom">
     <div class="container-fluid">
-      <span class="navbar-text">
-      	(주)<b>스키타루와</b> 대표이사: 이윤주 | 사업자등록번호 : 123412345<br>
+      <small class="navbar-text">
+      	(주)<b>스키타러와</b> 대표이사: 이윤주 | 사업자등록번호 : 123412345<br>
       	경기도 수원시 팔달구 중부대로 100 3층 | E-mail : yonghyunk09@gmail.com<br>
       	대표번호 : 010-9289-0372<br>
-        Copyright &copy; 2024 스키타루와. All rights reserved.
-      </span>
+        Copyright &copy; 2024 스키타러와. All rights reserved.
+      </small>
     </div>
     <div>
-    <img src="/mp/img/Taruwa_LOGO.png" height="50">
+    <img src="/mp/img/Taruwa_LOGO.png" height="70">
     </div>
   </nav>

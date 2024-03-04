@@ -68,7 +68,7 @@ public class UserDao {
 	 */
 	public List<User> getUserList(int num, int offset) { // num: 1 페이지에 몇명을 보여줄 건지, offset: 몇 페이지 건너뛸 것인지 
 		Connection conn = getConnection();
-		String sql = "select * from users where isDeleted=0" + " order by regDate desc, uid limit ? offset ?";
+		String sql = "select * from users where isDeleted!=1" + " order by regDate desc, uid limit ? offset ?";
 		 
 		List<User> list = new ArrayList<User>();
 		try {

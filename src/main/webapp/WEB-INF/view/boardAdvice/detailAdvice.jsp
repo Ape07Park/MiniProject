@@ -32,9 +32,7 @@ function deleteFunc(bid) {
 				<h3>
 					<strong class="me-5">게시글 보기</strong>
 					<span style="font-size: 16px">
-
-						<a href="/mp/mini/board/listBoardAdvice?p=${currentBoardPage}&f=${field}&q=${query}"><i class="fa-solid fa-table-list"></i>목록</a>
-
+						<a href="/mp/mini/board/listBoardAdvice?p=${currentBoardPage}"><i class="fa-solid fa-table-list"></i>목록</a>
 						<c:if test="${sessUid eq board.uid}">
 							<!-- 본인만 수정 삭제 가능 -->
 							 <a	href="/mp/mini/board/updateBoardAdvice?bid=${board.bid}">
@@ -49,6 +47,9 @@ function deleteFunc(bid) {
 					<div class="col-8">
 						<h5>${board.title}</h5>
 						<h6>글번호: ${board.bid} // ${fn:replace(board.modTime, "T", "")}</h6>
+					</div>
+					<div class="col-4 text-end">
+						<h5>작성자: ${board.uid}</h5>
 					</div>
 					<hr>
 					<div class="col-12">${fn:replace(board.content, newline, '<br>')}

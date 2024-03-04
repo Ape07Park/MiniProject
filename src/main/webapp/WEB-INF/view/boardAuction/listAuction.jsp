@@ -15,13 +15,10 @@ td, th {
 	margin-top: 20px; /* 페이지네이션 위 여백 조정 */
 }
 </style>
-<script>
-	function search() {
-		const field = $('#field').val();
-		const query = $('#query').val();
-		location.href = '/mp/mini/board/listAuction?p=${currentBoardPage}&f='
-				+ field + '&q=' + query;
-	}
+	<script>
+   function search() {
+      location.href = '/mp/mini/board/listAuction?p=${currentBoardPage}&f=uid&q=${sessUid}';
+   }
 </script>
 </head>
 <body>

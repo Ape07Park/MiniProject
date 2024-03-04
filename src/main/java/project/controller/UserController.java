@@ -61,8 +61,9 @@ public class UserController extends HttpServlet {
 
 			// for paginantion
 			int totalUsers = uSvc.getUserCount();
-			int totalpages = (int) Math.ceil(totalUsers * 1.0 / uSvc.COUNT_PER_PAGE); // 소수로 만들어서 나누고 나머지는 소수점으로 있기에
-																						// 올림하여 페이지 +1하기
+			int totalpages = (int) Math.ceil((totalUsers + 1) * 1.0 / uSvc.COUNT_PER_PAGE); // 소수로 만들어서 나누고 나머지는 소수점으로
+																							// 있기에
+																							// 올림하여 페이지 +1하기
 			List<String> pageList = new ArrayList<String>();
 			for (int i = 1; i <= totalpages; i++) {
 				pageList.add(String.valueOf(i)); // i(정수) -> String

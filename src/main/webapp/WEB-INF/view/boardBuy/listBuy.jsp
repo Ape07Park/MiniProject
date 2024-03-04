@@ -12,13 +12,10 @@ td, th {
 	text-align: center;
 }
 </style>
-<script>
-	function search() {
-		const field = $('#field').val();
-		const query = $('#query').val();
-		location.href = '/mp/mini/board/listBuy?p=${currentBoardPage}&f='
-				+ field + '&q=' + query;
-	}
+	<script>
+   function search() {
+      location.href = '/mp/mini/board/listBuy?p=${currentBoardPage}&f=uid&q=${sessUid}';
+   }
 </script>
 </head>
 <body>

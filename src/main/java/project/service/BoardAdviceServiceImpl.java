@@ -22,7 +22,7 @@ public class BoardAdviceServiceImpl implements BoardAdviceService {
 	}
 
 	@Override
-	public int getBoardCount(String field, String query) {
+	public int getBoardAdviceCount(String field, String query) {
 		return bDao.getBoardAdviceCount(field, query);
 	}
 

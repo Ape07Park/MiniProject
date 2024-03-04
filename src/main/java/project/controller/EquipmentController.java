@@ -42,14 +42,12 @@ public class EquipmentController extends HttpServlet {
 			session.setAttribute("currentUserPage", page);
 			List<Equipment> equipList = eSvc.getEquipmentList(page);
 
-
-
 			// 모델에서 가져오기: "list"에 list 값 세팅
 			request.setAttribute("equipList", equipList);
 
 			// for paginantion
 			int totalUsers = eSvc.getEquipmentCount();
-			int totalpages = (int) Math.ceil(totalUsers * 1.0 / eSvc.COUNT_PER_PAGE); // 소수로 만들어서 나누고 나머지는 소수점으로 있기에
+			int totalpages = (int) Math.ceil((totalUsers + 1) * 1.0 / eSvc.COUNT_PER_PAGE); // 소수로 만들어서 나누고 나머지는 소수점으로 있기에
 																						// 올림하여 페이지 +1하기
 			List<String> pageList = new ArrayList<String>();
 			for (int i = 1; i <= totalpages; i++) {
